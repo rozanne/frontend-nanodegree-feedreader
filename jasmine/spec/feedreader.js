@@ -95,16 +95,48 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         it('is hidden by default', function() {
-             expect($('body').hasClass('menu-hidden')).toBe(true);
-         });
+         beforeEach(function() {
+             // I don't have any idea what is filled in beforeEach function.
+         })
+         it('has loadFeed and It should be called and completed its work', function(done) {
+             // index means the first feed
+             var index = 0 ;
+             loadFeed(index, function() {
+                 done();
+             });
+             // I had no choice to add this expect, if below code is not exist, it occurs error not to be exist no spec.
+             expect(true).toBe(true);
+         }, 10000);
      });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
-
+    describe('New Feed Selection', function() {
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         beforeEach(function() {
+             // I don't have any idea what is filled in beforeEach function.
+         })
+         it('should change the content by selecting new feed', function(done) {
+             // prevIndex means the first feed
+             // nextIndex means the second feed
+             var prevIndex = 0;
+             var nextIndex = 1;
+             loadFeed(prevIndex, function() {
+                 var prevFirstLink = $('.feed').find('.entry-link')[0].href;
+                 loadFeed(nextIndex, function() {
+                     var nextFirstLink = $('.feed').find('.entry-link')[0].href;
+
+                     // compare each url of the first entry-link element in previous feed and next feed.
+                     expect(prevFirstLink).not.toEqual(nextFirstLink);
+                     done();
+                 })
+             });
+         }, 10000);
      });
+
+     // actually I don't know where can I implement number 18, 19 item of udacity requirement.
+     // 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
+     // 19. Implement error handling for undefined variables and out-of-bound array access
 }());
