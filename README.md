@@ -2,7 +2,41 @@
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
+# Introduction for this project
+## What kinds of tests included
 
+Test is largely divided into 4 categories.
+Basically all tests are performed automatically.
+Therefore user doesn't need to do anything for getting test results.
+Just feel free to gaze your monitor.
+
+### 4 describe
+    * RSS Feeds
+    * The menu
+    * Initial Entries
+    * New Feed Selection
+
+### describes have each test suites
+    * RSS Feeds
+        - are defined
+            check "allFeeds" variable is defined and has items
+        - have each defined url and it is not empty
+            check each url of "allFeeds" is defined and not empty
+        - have each defined name and it is not empty
+            check each name of "allFeeds" is defined and not empty
+    * The menu
+        - is hidden by default
+            check the slide menu is hidden by default
+        - changes visibility as toggle type when the menu icon is clicked.
+            check the slide menu changes visibility by clicking as toggle
+    * Initial Entries
+        - has loadFeed and It should be called and completed its work
+            check asynchronous operation of loadFeed works ell
+    * New Feed Selection
+        - should change the content by selecting new feed
+            check the content is changed by selecting new feed
+
+# Submit for udacity
 ## Why this Project?
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
@@ -44,5 +78,5 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
+20. When complete - all of your tests should pass.
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
