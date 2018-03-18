@@ -97,7 +97,7 @@ $(function() {
          */
          beforeEach(function() {
              // I don't have any idea what is filled in beforeEach function.
-         })
+         });
          it('has loadFeed and It should be called and completed its work', function(done) {
              // index means the first feed
              var index = 0 ;
@@ -117,7 +117,7 @@ $(function() {
          */
          beforeEach(function() {
              // I don't have any idea what is filled in beforeEach function.
-         })
+         });
          it('should change the content by selecting new feed', function(done) {
              // prevIndex means the first feed
              // nextIndex means the second feed
@@ -131,7 +131,7 @@ $(function() {
                      // compare each url of the first entry-link element in previous feed and next feed.
                      expect(prevFirstLink).not.toEqual(nextFirstLink);
                      done();
-                 })
+                 });
              });
          }, 10000);
      });
