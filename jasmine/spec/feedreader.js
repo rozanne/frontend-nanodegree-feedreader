@@ -83,7 +83,7 @@ $(function() {
              // index means the first feed
              var index = 0 ;
              loadFeed(index, function() {
-                 expect($('.feed').find('.entry-link').length).not.toBe(0);
+                 expect($('.feed .entry').length).not.toBe(0);
                  done();
              });
          }, 10000);
